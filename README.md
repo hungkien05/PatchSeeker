@@ -36,11 +36,12 @@ To prepare the input data for training and evaluation, follow these steps:
 
 ### Input Data Format:
 
-Prepare a CSV file with the following columns: cve,owner,repo,commit_id,label,desc_token,msg_token,diff_token,source_file.
+Prepare a CSV file with the following columns: `cve,owner,repo,commit_id,label,desc_token,msg_token,diff_token,source_file`. 
+This CSV format are the same with PatchFinder's CSV data format (https://github.com/MarkLee131/PatchFinder).
 
 
 
-- Training Data:
+#### Training Data:
 
 Run data/data.py to convert the CSV file to a JSON 
 
@@ -48,21 +49,21 @@ Clean the JSON file using clean_data.py
 Note: If the data file exceeds 2GB, split it into smaller files (<2GB each) before processing.
 
 
-- Evaluation Data:
+#### Evaluation Data:
 
 From the cleaned JSON file, generate corpus.json, queries.json, and qrels.trec files using corpus_query.py
 
 
-- CCT5 Integration:
+#### CCT5 Integration:
 
-To incorporate CCT5-generated commit messages:
+- To incorporate CCT5-generated commit messages:
 Run data_cct5.py to prepare data for CCT5
 
-Run the CCT5 model to generate commit messages, storing results in an outputs folder: https://github.com/Ringbo/CCT5
+- Run the CCT5 model to generate commit messages, storing results in an outputs folder: https://github.com/Ringbo/CCT5
 
-Process the CCT5 outputs using final_csv.py:python data/final_csv.py
+- Process the CCT5 outputs using final_csv.py:python data/final_csv.py
 
-Concatenate the data with concat_data.py to include CCT5 commit messages (only for commits with ≤5 tokens)
+- Concatenate the data with concat_data.py to include CCT5 commit messages (only for commits with ≤5 tokens)
 
 
 
@@ -107,4 +108,4 @@ All training and evaluation scripts are located in the {model}/src . Review and 
 - Dataset Availability: The Ms_macro_aug dataset is available on Hugging Face. Update the data_dir in the scripts to point to your local copy of the dataset.
 
 ### Acknowledgement
-We want to thank the authors of CCT5 (https://github.com/Ringbo/CCT5) and Tevatron (https://github.com/texttron/tevatron).
+We want to thank the authors of CCT5 (https://github.com/Ringbo/CCT5), Tevatron (https://github.com/texttron/tevatron) and PatchFinder (https://github.com/MarkLee131/PatchFinder)
