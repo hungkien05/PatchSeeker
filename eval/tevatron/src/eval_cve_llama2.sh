@@ -1,5 +1,5 @@
 #!/bin/bash
-# bash eval_cve_llama2.sh > logs/eval_llama2_mf.log 2>&1
+# bash eval_cve_llama2.sh > eval_llama2_mf.log 2>&1
 # Set the checkpoint path (update this to your actual checkpoint path)
 ckpt="/mnt/moon-data/hung/neptune_data/tuanna/finetune_all_4/checkpoint-8100"
 cve_corpus_dir="test_all/cve_corpus_cct5_0806_split"

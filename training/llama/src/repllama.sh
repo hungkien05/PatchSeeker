@@ -1,3 +1,4 @@
+#This script is used to train the Llama model for PatchSeeker retrieval tasks.
 # deepspeed --include localhost:2,3,5,6 --master_port 60000 --module tevatron.retriever.driver.train \
 #   --deepspeed deepspeed/ds_zero3_config.json \
 #   --output_dir /mnt/moon-data/hung/neptune_data/tuanna/qwen3_8b_PF_4 \
@@ -27,14 +28,7 @@
 #   --report_to wandb 
 
 
-    # for llama2 7b
-    # --resume_from_checkpoint checkpoint-6600 \
-    # --lora_target_modules q_proj,k_proj,v_proj,o_proj,down_proj,up_proj,gate_proj \
-
-  #     --lora \
-  # --lora_target_modules q_proj,k_proj,v_proj,o_proj,down_proj,up_proj,gate_proj \
-
-
+# THIS IS FOR TRAINING MSMARCO AUGMENTED DATASET
   deepspeed --include localhost:2,3,4,5 --master_port 60000 --module tevatron.retriever.driver.train \
   --deepspeed deepspeed/ds_zero3_config.json \
   --output_dir /mnt/moon-data/hung/neptune_data/tuanna/retrieval_qwen3_8b \
