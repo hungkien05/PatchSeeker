@@ -34,6 +34,10 @@ Note: Ensure GPU support is configured if training or evaluating on GPU-enabled 
 Data Preparation
 To prepare the input data for training and evaluation, follow these steps:
 
+### Datasets:
+
+The dataset is hosted on [Academic Torrent](https://academictorrents.com/details/bbad518053332f3578794b476405555a58232d77)
+
 ### Input Data Format:
 
 Prepare a CSV file with the following columns: `cve,owner,repo,commit_id,label,desc_token,msg_token,diff_token,source_file`. 
@@ -105,7 +109,11 @@ All training and evaluation scripts are located in the {model}/src . Review and 
 - CCT5 Integration: Only commits with ≤5 tokens are augmented with CCT5-generated commit messages to maintain efficiency.
 - Checkpoints: Save and manage checkpoints carefully to avoid overwriting. Use the --resume_from_checkpoint option to resume training from a specific checkpoint.
 - Dependencies: Ensure all required libraries (e.g., PyTorch, Hugging Face Transformers) are installed in the specified environments (repllama2, repllama_eval, etc.).
-- Dataset Availability: The Ms_macro_aug dataset is available on Hugging Face. Update the data_dir in the scripts to point to your local copy of the dataset.
+- Updated Venn digram for RQ1:
+![Updated Venn diagram for RQ1](images/venn4.png)
+
+
+
 
 ### Acknowledgement
 We want to thank the authors of CCT5 (https://github.com/Ringbo/CCT5), Tevatron (https://github.com/texttron/tevatron) and PatchFinder (https://github.com/MarkLee131/PatchFinder)
