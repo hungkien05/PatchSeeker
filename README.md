@@ -4,6 +4,10 @@ This is the official replication package for the paper "PatchSeeker: Mapping NVD
 PatchSeeker is a framework for mapping National Vulnerability Database (NVD) records to their corresponding vulnerability-fixing commits using Large Language Models (LLMs) and embeddings. This repository includes scripts for data preparation, model training, and evaluation, leveraging models such as LLaMA2 7B, LLaMA3 8B, Qwen3 8B, and CCT5.
 
 Our codebase is based on the implementation of Tevatron (https://github.com/texttron/tevatron)
+
+### Real-World Impact 
+
+We have submitted 77 VFCs that PatchSeeker found, covering 76 CVEs in 2025, to CNAs. Details can be found at https://docs.google.com/spreadsheets/d/1cNJGddfWerWjgtxfMNK4xHrD1s5bRCuuJLSALPZOatA/edit?usp=sharing
 ### Environment Setup
 
 
@@ -109,8 +113,7 @@ All training and evaluation scripts are located in the {model}/src . Review and 
 - CCT5 Integration: Only commits with ≤5 tokens are augmented with CCT5-generated commit messages to maintain efficiency.
 - Checkpoints: Save and manage checkpoints carefully to avoid overwriting. Use the --resume_from_checkpoint option to resume training from a specific checkpoint.
 - Dependencies: Ensure all required libraries (e.g., PyTorch, Hugging Face Transformers) are installed in the specified environments (repllama2, repllama_eval, etc.).
-- Updated Venn digram for RQ1:
-![Updated Venn diagram for RQ1](images/venn4.png)
+
 
 
 
