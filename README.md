@@ -7,8 +7,8 @@ Our codebase is based on the implementation of Tevatron (https://github.com/text
 
 ### Real-World Impact 
 
-We have submitted 77 VFCs that PatchSeeker found, covering 76 CVEs in 2025, to CNAs. Details can be found at https://docs.google.com/spreadsheets/d/1cNJGddfWerWjgtxfMNK4xHrD1s5bRCuuJLSALPZOatA/edit?usp=sharing
-### Environment Setup
+We have submitted 77 VFCs that PatchSeeker found, covering 76 CVEs in 2025, to CNAs. Details can be found at this [Excel file](Submitted_VFCs_of_PatchSeeker.xlsx)
+### Environment Setups
 
 
 To run the experiments, set up the following environments based on the task:
