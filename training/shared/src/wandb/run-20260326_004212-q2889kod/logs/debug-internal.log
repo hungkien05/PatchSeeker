@@ -1,0 +1,7 @@
+{"time":"2026-03-26T00:42:12.694510555+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/wandb/run-20260326_004212-q2889kod/logs/debug-core.log"}
+{"time":"2026-03-26T00:42:13.409161522+08:00","level":"INFO","msg":"created new stream","id":"q2889kod"}
+{"time":"2026-03-26T00:42:13.409226277+08:00","level":"INFO","msg":"stream: started","id":"q2889kod"}
+{"time":"2026-03-26T00:42:13.409236025+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"q2889kod"}
+{"time":"2026-03-26T00:42:13.409251793+08:00","level":"INFO","msg":"handler: started","stream_id":"q2889kod"}
+{"time":"2026-03-26T00:42:13.409250121+08:00","level":"INFO","msg":"sender: started","stream_id":"q2889kod"}
+{"time":"2026-03-26T00:42:14.149367852+08:00","level":"INFO","msg":"Starting system monitor"}

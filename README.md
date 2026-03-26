@@ -16,7 +16,7 @@ To run the experiments, set up the following environments based on the task:
 - Training LLaMA2 7B: Use the repllama2 environment.
 - Evaluating LLaMA2 7B and CR: Use the repllama_eval environment.
 - Training CR: Use either the repllama2 or repllama_cr environment.
-- Training Qwen3 8B: Use the repllama_qwen environment.
+- Training Qwen3 8B: Use the repllama_eval_qwen environment.
 - Training LLaMA3 8B and Evaluating Qwen3 8B or LLaMA3 8B: Use the repllama_eval_qwen environment.
 
 

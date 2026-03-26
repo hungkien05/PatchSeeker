@@ -1,0 +1,16 @@
+2026-03-26 02:05:49,780 INFO    MainThread:1619956 [wandb_setup.py:_flush():70] Current SDK version is 0.19.11
+2026-03-26 02:05:49,780 INFO    MainThread:1619956 [wandb_setup.py:_flush():70] Configure stats pid to 1619956
+2026-03-26 02:05:49,780 INFO    MainThread:1619956 [wandb_setup.py:_flush():70] Loading settings from /home/huuhungn/.config/wandb/settings
+2026-03-26 02:05:49,780 INFO    MainThread:1619956 [wandb_setup.py:_flush():70] Loading settings from /raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/wandb/settings
+2026-03-26 02:05:49,780 INFO    MainThread:1619956 [wandb_setup.py:_flush():70] Loading settings from environment variables
+2026-03-26 02:05:49,780 INFO    MainThread:1619956 [wandb_init.py:setup_run_log_directory():724] Logging user logs to /raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/wandb/run-20260326_020549-6200foih/logs/debug.log
+2026-03-26 02:05:49,780 INFO    MainThread:1619956 [wandb_init.py:setup_run_log_directory():725] Logging internal logs to /raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/wandb/run-20260326_020549-6200foih/logs/debug-internal.log
+2026-03-26 02:05:49,780 INFO    MainThread:1619956 [wandb_init.py:init():852] calling init triggers
+2026-03-26 02:05:49,780 INFO    MainThread:1619956 [wandb_init.py:init():857] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2026-03-26 02:05:49,780 INFO    MainThread:1619956 [wandb_init.py:init():893] starting backend
+2026-03-26 02:05:49,780 INFO    MainThread:1619956 [wandb_init.py:init():897] sending inform_init request
+2026-03-26 02:05:49,782 INFO    MainThread:1619956 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2026-03-26 02:05:49,782 INFO    MainThread:1619956 [wandb_init.py:init():907] backend started and connected
+2026-03-26 02:05:49,785 INFO    MainThread:1619956 [wandb_init.py:init():1005] updated telemetry
+2026-03-26 02:05:49,791 INFO    MainThread:1619956 [wandb_init.py:init():1029] communicating run to backend with 90.0 second timeout

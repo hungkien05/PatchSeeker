@@ -1,0 +1,161 @@
+  0%|          | 0/1000 [00:00<?, ?it/s]You're using a Qwen2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/utils/checkpoint.py:295: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cpu', args...)` instead.
+  with torch.enable_grad(), device_autocast_ctx, torch.cpu.amp.autocast(**ctx.cpu_autocast_kwargs):  # type: ignore[attr-defined]
+tried to get lr value before scheduler/optimizer started stepping, returning lr=0
+ 47%|████▋     | 471/1000 [01:58<02:13,  3.97it/s]Traceback (most recent call last):
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/tevatron/retriever/driver/train.py", line 106, in <module>
+    main()
+  File "/raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/tevatron/retriever/driver/train.py", line 99, in main
+    trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)  # TODO: resume training
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/transformers/trainer.py", line 2245, in train
+    return inner_training_loop(
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/transformers/trainer.py", line 2560, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/tevatron/retriever/trainer.py", line 53, in training_step
+    return super(TevatronTrainer, self).training_step(*args) / self._dist_loss_scale_factor
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/transformers/trainer.py", line 3736, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+  File "/raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/tevatron/retriever/trainer.py", line 50, in compute_loss
+    return model(query=query, passage=passage).loss
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
+    ret_val = func(*args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 1890, in forward
+    loss = self.module(*inputs, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1603, in _call_impl
+    result = forward_call(*args, **kwargs)
+  File "/raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/tevatron/retriever/modeling/encoder.py", line 48, in forward
+    q_reps = self.encode_query(query) if query else None
+  File "/raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/tevatron/retriever/modeling/dense.py", line 16, in encode_query
+    query_hidden_states = self.encoder(**qry, return_dict=True)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1603, in _call_impl
+    result = forward_call(*args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/peft/peft_model.py", line 1672, in forward
+    return self.base_model(
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1603, in _call_impl
+    result = forward_call(*args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/peft/tuners/tuners_utils.py", line 94, in forward
+    return self.model.forward(*args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 564, in forward
+    layer_outputs = self._gradient_checkpointing_func(
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/_compile.py", line 31, in inner
+    return disable_fn(*args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 600, in _fn
+    return fn(*args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/utils/checkpoint.py", line 481, in checkpoint
+    return CheckpointFunction.apply(function, preserve, *args)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/autograd/function.py", line 574, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/utils/checkpoint.py", line 255, in forward
+    outputs = run_function(*args)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1603, in _call_impl
+    result = forward_call(*args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 289, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1603, in _call_impl
+    result = forward_call(*args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 217, in forward
+    query_states = self.q_norm(self.q_proj(hidden_states).view(hidden_shape)).transpose(1, 2)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1559, in _call_impl
+    if not (self._backward_hooks or self._backward_pre_hooks or self._forward_hooks or self._forward_pre_hooks
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+[rank0]:     return _run_code(code, main_globals, None,
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/runpy.py", line 86, in _run_code
+[rank0]:     exec(code, run_globals)
+[rank0]:   File "/raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/tevatron/retriever/driver/train.py", line 106, in <module>
+[rank0]:     main()
+[rank0]:   File "/raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/tevatron/retriever/driver/train.py", line 99, in main
+[rank0]:     trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)  # TODO: resume training
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/transformers/trainer.py", line 2245, in train
+[rank0]:     return inner_training_loop(
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/transformers/trainer.py", line 2560, in _inner_training_loop
+[rank0]:     tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+[rank0]:   File "/raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/tevatron/retriever/trainer.py", line 53, in training_step
+[rank0]:     return super(TevatronTrainer, self).training_step(*args) / self._dist_loss_scale_factor
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/transformers/trainer.py", line 3736, in training_step
+[rank0]:     loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+[rank0]:   File "/raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/tevatron/retriever/trainer.py", line 50, in compute_loss
+[rank0]:     return model(query=query, passage=passage).loss
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
+[rank0]:     ret_val = func(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 1890, in forward
+[rank0]:     loss = self.module(*inputs, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1603, in _call_impl
+[rank0]:     result = forward_call(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/tevatron/retriever/modeling/encoder.py", line 48, in forward
+[rank0]:     q_reps = self.encode_query(query) if query else None
+[rank0]:   File "/raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/tevatron/retriever/modeling/dense.py", line 16, in encode_query
+[rank0]:     query_hidden_states = self.encoder(**qry, return_dict=True)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1603, in _call_impl
+[rank0]:     result = forward_call(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/peft/peft_model.py", line 1672, in forward
+[rank0]:     return self.base_model(
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1603, in _call_impl
+[rank0]:     result = forward_call(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/peft/tuners/tuners_utils.py", line 94, in forward
+[rank0]:     return self.model.forward(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/transformers/utils/generic.py", line 965, in wrapper
+[rank0]:     output = func(self, *args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 564, in forward
+[rank0]:     layer_outputs = self._gradient_checkpointing_func(
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/_compile.py", line 31, in inner
+[rank0]:     return disable_fn(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 600, in _fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/utils/checkpoint.py", line 481, in checkpoint
+[rank0]:     return CheckpointFunction.apply(function, preserve, *args)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/autograd/function.py", line 574, in apply
+[rank0]:     return super().apply(*args, **kwargs)  # type: ignore[misc]
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/utils/checkpoint.py", line 255, in forward
+[rank0]:     outputs = run_function(*args)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1603, in _call_impl
+[rank0]:     result = forward_call(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 289, in forward
+[rank0]:     hidden_states, self_attn_weights = self.self_attn(
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1603, in _call_impl
+[rank0]:     result = forward_call(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 217, in forward
+[rank0]:     query_states = self.q_norm(self.q_proj(hidden_states).view(hidden_shape)).transpose(1, 2)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/raid/data/hung/anaconda3/envs/repllama_issta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1559, in _call_impl
+[rank0]:     if not (self._backward_hooks or self._backward_pre_hooks or self._forward_hooks or self._forward_pre_hooks
+[rank0]: KeyboardInterrupt

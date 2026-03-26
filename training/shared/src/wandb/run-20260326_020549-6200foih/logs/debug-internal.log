@@ -1,0 +1,6 @@
+{"time":"2026-03-26T02:05:49.783939253+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/wandb/run-20260326_020549-6200foih/logs/debug-core.log"}
+{"time":"2026-03-26T02:05:50.475018345+08:00","level":"INFO","msg":"created new stream","id":"6200foih"}
+{"time":"2026-03-26T02:05:50.475061616+08:00","level":"INFO","msg":"stream: started","id":"6200foih"}
+{"time":"2026-03-26T02:05:50.475076745+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"6200foih"}
+{"time":"2026-03-26T02:05:50.475097575+08:00","level":"INFO","msg":"sender: started","stream_id":"6200foih"}
+{"time":"2026-03-26T02:05:50.475089755+08:00","level":"INFO","msg":"handler: started","stream_id":"6200foih"}

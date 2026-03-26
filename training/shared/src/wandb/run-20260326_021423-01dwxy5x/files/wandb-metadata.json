@@ -1,0 +1,137 @@
+{
+  "os": "Linux-5.15.0-1065-nvidia-x86_64-with-glibc2.35",
+  "python": "CPython 3.10.16",
+  "startedAt": "2026-03-25T18:14:23.766184Z",
+  "args": [
+    "--local_rank=0",
+    "--deepspeed",
+    "deepspeed/ds_zero3_config.json",
+    "--output_dir",
+    "/mnt/moon-data/hung/neptune_data/tuanna/qwen_issta",
+    "--model_name_or_path",
+    "Qwen/Qwen3-8B",
+    "--trust_remote_code",
+    "True",
+    "--lora",
+    "--lora_target_modules",
+    "q_proj,k_proj,v_proj,o_proj,down_proj,up_proj,gate_proj",
+    "--lora_dropout",
+    "0.3",
+    "--save_steps",
+    "100",
+    "--dataset_name",
+    "/raid/data/hung/tuanna/tuanna/data_repllama/cve_all_parrallel_1_cleaned.json",
+    "--query_prefix",
+    "Query: ",
+    "--passage_prefix",
+    "Passage: ",
+    "--bf16",
+    "--pooling",
+    "eos",
+    "--append_eos_token",
+    "--normalize",
+    "--temperature",
+    "0.01",
+    "--per_device_train_batch_size",
+    "4",
+    "--gradient_checkpointing",
+    "--train_group_size",
+    "16",
+    "--learning_rate",
+    "5e-4",
+    "--query_max_len",
+    "32",
+    "--passage_max_len",
+    "196",
+    "--num_train_epochs",
+    "1000",
+    "--logging_steps",
+    "1",
+    "--overwrite_output_dir",
+    "--warmup_steps",
+    "2",
+    "--gradient_accumulation_steps",
+    "256",
+    "--report_to",
+    "wandb",
+    "--resume_from_checkpoint",
+    "/mnt/moon-data/hung/neptune_data/tuanna/qwen3_8b_PF_4/checkpoint-470"
+  ],
+  "program": "-m tevatron.retriever.driver.train",
+  "git": {
+    "remote": "https://github.com/hungkien05/PatchSeeker.git",
+    "commit": "118cd9c5e8d9767c1dff6aa08215166ed948c423"
+  },
+  "email": "natvn313@gmail.com",
+  "root": "/raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src",
+  "host": "Neptune",
+  "executable": "/raid/data/hung/anaconda3/envs/repllama_issta/bin/python",
+  "cpu_count": 112,
+  "cpu_count_logical": 224,
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "gpu_count": 8,
+  "disk": {
+    "/": {
+      "total": "1888425144320",
+      "used": "1539223109632"
+    }
+  },
+  "memory": {
+    "total": "2164194066432"
+  },
+  "cpu": {
+    "count": 112,
+    "countLogical": 224
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper"
+    },
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper"
+    },
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper"
+    },
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper"
+    },
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper"
+    },
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper"
+    },
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper"
+    },
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper"
+    }
+  ],
+  "cudaVersion": "12.2"
+}
