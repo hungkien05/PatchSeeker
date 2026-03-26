@@ -41,6 +41,13 @@ To prepare the input data for training and evaluation, follow these steps:
 ### Datasets:
 
 The dataset is hosted on [Academic Torrent](https://academictorrents.com/details/bbad518053332f3578794b476405555a58232d77)
+You can download the torrent file and use [aria2c](https://aria2.github.io/) to download the dataset
+
+```
+apt install aria2
+
+aria2c patchseeker_data.torrent
+```
 
 ### Input Data Format:
 
@@ -50,6 +57,8 @@ This CSV format are the same with PatchFinder's CSV data format (https://github.
 
 
 #### Training Data:
+
+All path can be change in data/config.py (Path for data only)
 
 Run data/data.py to convert the CSV file to a JSON 
 

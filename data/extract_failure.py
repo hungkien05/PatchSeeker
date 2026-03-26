@@ -1,18 +1,21 @@
-#The name of top 1000 that repllama can't find 
+#The name of top 1000 that repllama can't find
 import os
 import subprocess
 from concurrent.futures import ProcessPoolExecutor
+from config import (EXTRACT_FAILURE_OUTPUT, EXTRACT_FAILURE_QRELS_DIR,
+                    EXTRACT_FAILURE_RANK_DIR, EXTRACT_FAILURE_ALT_QRELS_DIR,
+                    EXTRACT_FAILURE_ALT_RANK_DIR)
 
 # Chọn danh sách giá trị k để tính Recall@k
 ks = [1]  # Bạn có thể thêm các giá trị khác: [1, 5, 10, 20, 100, 1000, ...]
 k_ndcg =1
-output_path = "/raid/data/hung/tuanna/tuanna/data_repllama/metric/qwen8b_0806_failure_top1.txt"
+output_path = EXTRACT_FAILURE_OUTPUT
 # Thư mục chứa file qrels và kết quả xếp hạng
-input_dir = "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/test_all/cve_qrels_0806_split"
-output_dir = "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/beir_embedding_cve_test_0806_qwen8b/rank_cve"
+input_dir = EXTRACT_FAILURE_QRELS_DIR
+output_dir = EXTRACT_FAILURE_RANK_DIR
 
-# input_dir = "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/test_all/cve_qrels_split"
-# output_dir = "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/beir_embedding_cve_test_ckpt4/rank_cve"
+# input_dir = EXTRACT_FAILURE_ALT_QRELS_DIR
+# output_dir = EXTRACT_FAILURE_ALT_RANK_DIR
 
 def evaluate_file(qrels_file, k_val):
     """Evaluate a single qrels file and return recall and ndcg."""

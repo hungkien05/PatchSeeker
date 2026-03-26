@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Set the checkpoint path (update this to your actual checkpoint path)
-ckpt="/mnt/moon-data/hung/neptune_data/tuanna/llama3_PF_4/checkpoint-450"
-# ckpt="/mnt/moon-data/hung/neptune_data/tuanna/retrieval_llama3_8b/checkpoint-239"
+ckpt=""
 cve_corpus_dir="test_all/cve_corpus_0806_split/"
 cve_queries_dir="test_all/cve_queries_0806_split"
 cve_qrels_dir="test_all/cve_qrels_0806_split"
@@ -79,7 +78,6 @@ for cve_file in ${cve_corpus_dir}/*.json; do
     python -m pyserini.eval.trec_eval -c -mrecall.10  ${cve_qrels_dir}/${cve}.trec  ${base_output_dir}/rank_cve/${cve}.trec
     python -m pyserini.eval.trec_eval -c -mrecall.1  ${cve_qrels_dir}/${cve}.trec  ${base_output_dir}/rank_cve/${cve}.trec
 
-    echo "----- Output: /raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/${base_output_dir}/rank_cve/${cve}.txt"
     echo "-----------------------------------"
     # break
 done

@@ -7,6 +7,7 @@ from multiprocessing import Pool, Manager
 import time
 
 from lib import setup_logger
+from config import DATA_PARALLEL_INPUT_DIR
 
 count_finish = 0
 logger = setup_logger("data_parallel_test.log")
@@ -92,7 +93,7 @@ def process_file(file_path, shared_data_dict, shared_docid):
     return len(df)
 
 def main():
-    input_dir = "/raid/data/hung/code/github_clone/wp1b_data/pf_test_full"
+    input_dir = DATA_PARALLEL_INPUT_DIR
     output_file = "json/cve_test_full.json"
     
     # Get all CSV files in the input directory

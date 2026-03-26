@@ -1,5 +1,5 @@
-ckpt="/mnt/moon-data/hung/neptune_data/tuanna/llama3_PF_4/checkpoint-450"
-ckpt="/mnt/moon-data/hung/neptune_data/tuanna/qwen3_06b_PF_4/checkpoint-700"
+ckpt=""
+ckpt=""
 cve="CVE-2023-2616"
 cve_corpus_dir="test_all/cve_corpus_mf_split"
 cve_queries_dir="test_all/cve_queries_mf_split"
@@ -73,4 +73,3 @@ echo "------- ${cve}: Compute metrics -------"
 python -m pyserini.eval.trec_eval -c -mrecall.100 -mndcg_cut.10 ${cve_qrels_dir}/${cve}.trec  beir_embedding_cve_test_ckpt4/rank_cve_draft/${cve}.trec
 
 
-echo "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/beir_embedding_cve_test_ckpt4/rank_cve_draft/${cve}.txt"

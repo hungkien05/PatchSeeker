@@ -1,7 +1,0 @@
-{"time":"2026-03-26T01:11:37.422003665+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/raid/data/hung/tuanna/Fix_ISSTA/PatchSeeker/training/shared/src/wandb/run-20260326_011137-srjbnjl6/logs/debug-core.log"}
-{"time":"2026-03-26T01:11:38.133749942+08:00","level":"INFO","msg":"created new stream","id":"srjbnjl6"}
-{"time":"2026-03-26T01:11:38.133799794+08:00","level":"INFO","msg":"stream: started","id":"srjbnjl6"}
-{"time":"2026-03-26T01:11:38.133813523+08:00","level":"INFO","msg":"sender: started","stream_id":"srjbnjl6"}
-{"time":"2026-03-26T01:11:38.13382241+08:00","level":"INFO","msg":"handler: started","stream_id":"srjbnjl6"}
-{"time":"2026-03-26T01:11:38.133846264+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"srjbnjl6"}
-{"time":"2026-03-26T01:11:39.097357918+08:00","level":"INFO","msg":"Starting system monitor"}

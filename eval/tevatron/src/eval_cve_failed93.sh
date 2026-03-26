@@ -62,7 +62,6 @@ for cve_file in ${cve_corpus_dir}/*.json; do
     
     echo "Completed processing ${cve}"
     python -m pyserini.eval.trec_eval -c -mrecall.100 -mndcg_cut.10 test_all/cve_qrels_split/${cve}.trec  ${base_output_dir}/rank_cve/${cve}.trec
-    echo "----- Output: /raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/${base_output_dir}/rank_cve/${cve}.txt"
     echo "-----------------------------------"
     # break
 done

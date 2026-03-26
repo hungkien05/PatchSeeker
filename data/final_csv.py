@@ -4,6 +4,7 @@ import sys
 import os
 from collections import defaultdict
 import pandas as pd
+from config import FINAL_CSV_INPUT, FINAL_CSV_PRED_BASE_DIR
 
 # Increase CSV field size limit
 csv.field_size_limit(sys.maxsize)
@@ -19,8 +20,8 @@ FILE_EXT_MAP = {
 }
 
 # Paths and settings
-CSV_INPUT_PATH = "/mnt/moon-data/hung/wp1b_data_new/test_0806/429.csv"
-PRED_BASE_DIR = "/raid/data/hung/tuanna/tuanna/CCT5/outputs_0706/models/fine-tuning/CommitMsgGeneration"
+CSV_INPUT_PATH = FINAL_CSV_INPUT
+PRED_BASE_DIR = FINAL_CSV_PRED_BASE_DIR
 CHUNK_SIZE = 10000000  # Adjust based on available RAM
 FILE_TYPES = list(set(FILE_EXT_MAP.values()))
 

@@ -4,6 +4,8 @@ import os
 from pathlib import Path
 from tqdm import tqdm
 import ijson
+from config import (CONCAT_DATA_BASE_DIR, CONCAT_DATA_JSON_INPUT,
+                    CONCAT_DATA_OUTPUT_JSON, CONCAT_DATA_OUTPUT_DOCIDS)
 
 def build_docid_hashmap(csv_files):
     """Build a hashmap of docid to cct5_msg_token from all CSV files."""
@@ -87,12 +89,12 @@ def save_matched_docids(matched_docids, output_docids_path):
 
 def main():
     # Define paths and input
-    csv_files = [f"/raid/data/hung/tuanna/tuanna/data_repllama/test_cct5_0806/test_0806_concat_{name}_final.csv" for name in ['cpp', 'cs', 'js', 'java', 'python']]
+    csv_files = [os.path.join(CONCAT_DATA_BASE_DIR, f"test_0806_concat_{name}_final.csv") for name in ['cpp', 'cs', 'js', 'java', 'python']]
     json_files = [
-        "/raid/data/hung/tuanna/tuanna/data_repllama/test_cct5_0806/mf_71_cleaned.json"
+        CONCAT_DATA_JSON_INPUT
     ]
-    output_json_path = "/raid/data/hung/tuanna/tuanna/data_repllama/test_cct5_0806/matched_cve_entries_71cve.json"
-    output_docids_path = "/raid/data/hung/tuanna/tuanna/data_repllama/test_cct5_0806/matched_docids_71cve.txt"
+    output_json_path = CONCAT_DATA_OUTPUT_JSON
+    output_docids_path = CONCAT_DATA_OUTPUT_DOCIDS
 
     # Build hashmap from CSV files
     print("Building docid hashmap from CSV files...")

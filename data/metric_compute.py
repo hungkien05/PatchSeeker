@@ -7,6 +7,7 @@ import re
 import pandas as pd
 
 from lib import setup_logger
+from config import METRIC_COMPUTE_QRELS_DIR, METRIC_COMPUTE_RANK_DIR
 
 logger =setup_logger("metric_llama2_0806.log")
 metric_csv_path = "metric/metric_llama2_0806.csv"
@@ -35,8 +36,8 @@ ndcgs = {ki: 0 for ki in k} # Added NDCG tracking
 manual_efforts_result = {ki: 0 for ki in k}  # Store manual efforts for each k
 for i in k:
     # Paths
-    input_dir = "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/test_all/cve_qrels_0806_split"
-    output_dir = "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/beir_embedding_cve_test_0806_llama2/rank_cve"
+    input_dir = METRIC_COMPUTE_QRELS_DIR
+    output_dir = METRIC_COMPUTE_RANK_DIR
     def evaluate_file(qrels_file):
         """Evaluate a single qrels file and return recall, ndcg, and mrr."""
         qrels_path = os.path.join(input_dir, qrels_file)

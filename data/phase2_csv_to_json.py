@@ -1,9 +1,10 @@
 import pandas as pd
 import json
+from config import PHASE2_INPUT_CSV, PHASE2_OUTPUT_JSONL
 
 # Input and output file paths
-csv_file = "/home/huuhungn/tuanna/rankllama_eval/tevatron/src/rankllama/patchfinder_phase2/top_100_fusion/top_100_fusion.csv"
-jsonl_file = "/home/huuhungn/tuanna/rankllama_eval/tevatron/src/rankllama/patchfinder_phase2/top_100_fusion/top_100_fusion.jsonl"
+csv_file = PHASE2_INPUT_CSV
+jsonl_file = PHASE2_OUTPUT_JSONL
 
 # Read the CSV file
 df = pd.read_csv(csv_file)

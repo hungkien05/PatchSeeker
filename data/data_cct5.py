@@ -3,6 +3,7 @@ import json
 import re
 from collections import defaultdict
 import sys
+from config import DATA_CCT5_INPUT_CSV
 
 # Tăng giới hạn kích thước trường của csv
 csv.field_size_limit(sys.maxsize)
@@ -80,7 +81,7 @@ def process_csv_to_jsonl(csv_file_path):
         print("Không thể đọc file với bất kỳ mã hóa nào trong danh sách.")
 
 # Gọi hàm
-csv_file_path = "/mnt/moon-data/hung/wp1b_data_new/test_0806/429.csv"  # Thay bằng đường dẫn thực tế
+csv_file_path = DATA_CCT5_INPUT_CSV
 process_csv_to_jsonl(csv_file_path)
 print(f"Số lượng file cpp: {cpp}")
 print(f"Số lượng file python: {py}")  

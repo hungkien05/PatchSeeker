@@ -1,9 +1,12 @@
+import os
 import torch
 import torch.nn as nn
 from torch import Tensor
 from transformers import LlamaModel, LlamaConfig, LlamaTokenizer
 import json
 import logging
+
+_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 from huggingface_hub import hf_hub_download
 from tevatron.modeling.encoder import EncoderModel
 
@@ -67,8 +70,8 @@ class RepLLaMA(EncoderModel):
             **kwargs,
     ):
             # Use local paths
-            local_weights_path = "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/repllama/llama2_base/consolidated.00.pth"
-            config_path = "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/repllama/llama2_base/params.json"
+            local_weights_path = os.path.join(_SCRIPT_DIR, "llama2_base", "consolidated.00.pth")
+            config_path = os.path.join(_SCRIPT_DIR, "llama2_base", "params.json")
             
             # Load configuration from params.json
             with open(config_path, 'r') as f:

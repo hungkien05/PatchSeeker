@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from collections import defaultdict
+from config import CVE_QRELS_SPLIT_INPUT, CVE_QRELS_SPLIT_OUTPUT_DIR
 
 def split_trec_file(input_file, output_dir="trec_files_by_cve"):
     """Split a TREC file into separate files by CVE-ID in the first column."""
@@ -36,4 +37,4 @@ def split_trec_file(input_file, output_dir="trec_files_by_cve"):
 
 if __name__ == "__main__":
     # Replace "trec_file.txt" with your actual TREC file path
-    split_trec_file("/raid/data/hung/tuanna/tuanna/data_repllama/24_01_2026/cve_qrels.trec", "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/test_all/cve_qrels_24_01_2026_split")
+    split_trec_file(CVE_QRELS_SPLIT_INPUT, CVE_QRELS_SPLIT_OUTPUT_DIR)

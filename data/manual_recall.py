@@ -1,7 +1,8 @@
 import os
+from config import MANUAL_RECALL_GROUND_TRUTH, MANUAL_RECALL_INPUT_DIR
 
-gr_truth = "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/test_all/cve_qrels_0806_split"
-input_dir = "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/beir_embedding_cve_test_0806_qwen8b/rank_cve"
+gr_truth = MANUAL_RECALL_GROUND_TRUTH
+input_dir = MANUAL_RECALL_INPUT_DIR
 
 
 for k in [1, 5, 10, 20, 50 ,100]:

@@ -1,14 +1,14 @@
 #!/bin/bash
 deepspeed --include localhost:0,2,3,4 --master_port 60001 --module tevatron.retriever.driver.train \
   --deepspeed deepspeed/ds_zero3_config.json \
-  --output_dir /mnt/moon-data/hung/neptune_data/tuanna/qwen_issta \
+  --output_dir "Your path to output directory" \
   --model_name_or_path Qwen/Qwen3-8B \
   --trust_remote_code True \
   --lora \
   --lora_target_modules q_proj,k_proj,v_proj,o_proj,down_proj,up_proj,gate_proj \
   --lora_dropout 0.3\
   --save_steps 100 \
-  --dataset_name /raid/data/hung/tuanna/tuanna/data_repllama/cve_all_parrallel_1_cleaned.json \
+  --dataset_name "Your path to dataset"  \
   --query_prefix "Query: " \
   --passage_prefix "Passage: " \
   --bf16 \
@@ -28,7 +28,7 @@ deepspeed --include localhost:0,2,3,4 --master_port 60001 --module tevatron.retr
   --warmup_steps 2 \
   --gradient_accumulation_steps 256\
   --report_to wandb \
-  --resume_from_checkpoint /mnt/moon-data/hung/neptune_data/tuanna/qwen3_8b_PF_4/checkpoint-470 \
+  --resume_from_checkpoint "Your path to checkpoint" \
     # for llama2 7b
     # --resume_from_checkpoint checkpoint-6600 \
     # --lora_target_modules q_proj,k_proj,v_proj,o_proj,down_proj,up_proj,gate_proj \

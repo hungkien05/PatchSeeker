@@ -1,6 +1,7 @@
 import json
 import os
 from pathlib import Path
+from config import CVE_QUERIES_SPLIT_INPUT, CVE_QUERIES_SPLIT_OUTPUT_DIR
 
 def split_cve_queries(input_file, output_dir="cve_query_files"):
     """Split the CVE queries into separate files by query_id (CVE-ID)."""
@@ -33,4 +34,4 @@ def split_cve_queries(input_file, output_dir="cve_query_files"):
     print(f"Processed {len(data)} entries into {len(cve_groups)} files")
 
 if __name__ == "__main__":
-    split_cve_queries("/raid/data/hung/tuanna/tuanna/data_repllama/24_01_2026/cve_queries.json", "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/test_all/cve_queries_24_01_2026_split")
+    split_cve_queries(CVE_QUERIES_SPLIT_INPUT, CVE_QUERIES_SPLIT_OUTPUT_DIR)

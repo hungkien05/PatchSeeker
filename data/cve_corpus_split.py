@@ -2,6 +2,7 @@ import json
 import os
 import re
 from pathlib import Path
+from config import CVE_CORPUS_SPLIT_INPUT, CVE_CORPUS_SPLIT_OUTPUT_DIR
 
 def extract_cve_id(docid):
     """Extract the CVE-ID from the end of the docid field."""
@@ -73,5 +74,5 @@ def split_cve_corpus(input_file, output_dir="cve_files"):
     print(f"Processed {len(data)} entries into {len(cve_groups)} files")
 
 if __name__ == "__main__":
-    split_cve_corpus("/raid/data/hung/tuanna/tuanna/data_repllama/24_01_2026/cve_corpus.json", "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/test_all/cve_corpus_24_01_2026_split")
+    split_cve_corpus(CVE_CORPUS_SPLIT_INPUT, CVE_CORPUS_SPLIT_OUTPUT_DIR)
     # print(filter_commit_messages("do fffff9abcfb dcm \\u003 i do work func() \n i work"))

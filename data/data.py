@@ -1,7 +1,8 @@
 import pandas as pd
 import json
+from config import DATA_INPUT_CSV, DATA_OUTPUT_JSON
 
-file_path = "/mnt/moon-data/hung/wp1b_data_new/implicit_2025_ground_truth.csv"
+file_path = DATA_INPUT_CSV
 
 
 # Read the CSV with the detected encoding
@@ -43,7 +44,7 @@ for _, row in df.iterrows():
                 "title": " "
             })
 
-output_file = "/raid/data/hung/tuanna/tuanna/data_repllama/implicit_2025_ground_truth.json"
+output_file = DATA_OUTPUT_JSON
 
 with open(output_file, "w") as f:
     json.dump(list(data_dict.values()), f, indent=4)

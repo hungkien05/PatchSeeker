@@ -1,5 +1,6 @@
 import os
 import re
+from config import DUPLICATE_REMOVAL_DIR
 
 def process_directory(directory_path):
     # Get all files in the directory
@@ -44,7 +45,7 @@ def remove_duplicates(file_path):
 # Usage example
 if __name__ == "__main__":
     import sys
-    directory_path = "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/beir_embedding_cve_test_ckpt4/CCT5_old/rank_cve"
+    directory_path = DUPLICATE_REMOVAL_DIR
     
     process_directory(directory_path)
     print("Done! Duplicate lines have been removed from all files.")

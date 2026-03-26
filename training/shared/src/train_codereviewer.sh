@@ -1,10 +1,10 @@
 #!/bin/bash
 deepspeed --include localhost:0,2,3,6 --master_port 60000 --module tevatron.retriever.driver.train \
   --deepspeed deepspeed/ds_zero3_config.json \
-  --output_dir /mnt/moon-data/hung/neptune_data/tuanna/codereviewer_pf4 \
+  --output_dir "Your path to output directory" \
   --model_name_or_path microsoft/codereviewer \
   --save_steps 20 \
-  --dataset_name /raid/data/hung/tuanna/tuanna/data_repllama/cve_all_parrallel_4_cleaned.json \
+  --dataset_name "Your path to dataset" \
   --query_prefix "Query: " \
   --passage_prefix "Passage: " \
   --bf16 \
@@ -25,9 +25,8 @@ deepspeed --include localhost:0,2,3,6 --master_port 60000 --module tevatron.retr
   --warmup_steps 10 \
   --lora \
   --lora_target_modules q,k,v,o,wi,wo,down_proj,up_proj,gate_proj \
-  --resume_from_checkpoint /mnt/moon-data/hung/neptune_data/tuanna/codereviewer_pf3/checkpoint-2000
+  --resume_from_checkpoint "Your path to checkpoint"
 
-  # --resume_from_checkpoint /mnt/moon-data/hung/neptune_data/tuanna/codereviewer_3/checkpoint-4400
 
   # --report_to wandb 
 
@@ -41,9 +40,10 @@ deepspeed --include localhost:0,2,3,6 --master_port 60000 --module tevatron.retr
 
   # 1e-3 , 100 with cr_1_test
 
+  # THis is script for training with Tevatron/msmarco-passage-aug
   #   deepspeed --include localhost:0,3,5,6 --master_port 60000 --module tevatron.retriever.driver.train \
   # --deepspeed deepspeed/ds_zero3_config.json \
-  # --output_dir /mnt/moon-data/hung/neptune_data/tuanna/retrieval_cr_test \
+  # --output_dir "Your path to output directory" \
   # --model_name_or_path microsoft/codereviewer \
   # --lora \
   # --lora_target_modules q,k,v,o,wi,wo,down_proj,up_proj,gate_proj   \
@@ -67,5 +67,5 @@ deepspeed --include localhost:0,2,3,6 --master_port 60000 --module tevatron.retr
   # --warmup_steps 50 \
   # --overwrite_output_dir \
   # --gradient_accumulation_steps 128 \
-  # --resume_from_checkpoint /mnt/moon-data/hung/neptune_data/tuanna/retrieval_cr/checkpoint-220
+  # --resume_from_checkpoint "Your path to checkpoint" 
 

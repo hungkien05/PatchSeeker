@@ -1,8 +1,9 @@
 # import os
 # import re
 # from collections import Counter
+from config import CHECK_DUPLICATE_QRELS_DIR, CHECK_DUPLICATE_RANK_DIR
 
-# rank_cve = "/home/huuhungn/tuanna/tevatron_v1/tevatron/src/beir_embedding_cve_test_ckpt4/rank_cve"
+# rank_cve = CHECK_DUPLICATE_RANK_DIR
 # seen_ids = set()
 # duplicates = []
 
@@ -118,7 +119,7 @@ def extract_cve_ids(data: str) -> list[str]:
     cve_ids = re.findall(r'(CVE-\d{4}-\d+)', data)
     return cve_ids
 # Path to the qrel folder
-qrel = "/home/huuhungn/tuanna/tevatron_v1/tevatron/src/test_all/cve_qrels_split"
+qrel = CHECK_DUPLICATE_QRELS_DIR
 cve_ids_to_remove = extract_cve_ids(data)
 # Remove CVE IDs from files in the qrel folder
 for root, _, files in os.walk(qrel):

@@ -3,14 +3,15 @@ import subprocess
 from concurrent.futures import ProcessPoolExecutor
 from tempfile import NamedTemporaryFile
 import re
+from config import RECALL_COMPUTE_QRELS_DIR, RECALL_COMPUTE_RANK_DIR
 
 
 
 k= list(range(1, 11)) + [20, 50, 100, 1000]
 for i in k:
 # Paths
-    input_dir = "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/test_all/cve_qrels_split"
-    output_dir = "/raid/data/hung/tuanna/tuanna/tevatron_v1/tevatron/src/beir_embedding_cve_test_ckpt4/rank_cve"
+    input_dir = RECALL_COMPUTE_QRELS_DIR
+    output_dir = RECALL_COMPUTE_RANK_DIR
 
     def evaluate_file(qrels_file):
         """Evaluate a single qrels file and return recall and ndcg."""

@@ -1,7 +1,8 @@
 import json
+from config import CLEAN_DATA_INPUT, CLEAN_DATA_OUTPUT
 
-input_file = "/raid/data/hung/tuanna/tuanna/data_repllama/implicit_2025_ground_truth.json"
-output_file = "/raid/data/hung/tuanna/tuanna/data_repllama/implicit_2025_ground_truth_cleaned.json"
+input_file = CLEAN_DATA_INPUT
+output_file = CLEAN_DATA_OUTPUT
 
 # Đọc file JSON đầu vào
 with open(input_file, "r", encoding="latin-1") as f:
