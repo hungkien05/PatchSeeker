@@ -25,13 +25,7 @@ Set up the required environments using the provided environment configurations (
 
 ### Checkpoint of model: 
 
-LlaMA2 7B: https://huggingface.co/meta-llama/Llama-2-7b
-
-LLaMA3 8B: https://huggingface.co/meta-llama/Meta-Llama-3-8B
-
-Qwen3 8B: https://huggingface.co/Qwen/Qwen3-8B
-
-CodeReviewer: https://huggingface.co/microsoft/codereviewer
+You can find checkpoints in https://huggingface.co/Ngoc9392/Patchseeker_Checkpoint/tree/main
 
 
 Note: Ensure GPU support is configured if training or evaluating on GPU-enabled systems. Refer to the specific environment setup scripts for detailed instructions.
