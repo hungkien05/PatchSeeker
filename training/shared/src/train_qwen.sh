@@ -19,7 +19,7 @@ deepspeed --include localhost:0,2,3,4 --master_port 60001 --module tevatron.retr
   --per_device_train_batch_size 4 \
   --gradient_checkpointing \
   --train_group_size 16 \
-  --learning_rate 5e-4 \
+  --learning_rate 1e-4 \
   --query_max_len 32 \
   --passage_max_len 196 \
   --num_train_epochs 1000 \
